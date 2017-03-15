@@ -36,7 +36,7 @@ function Get-AdminSecGroups ($Obj)
 # Format and filter AD Security Groups for clarity
 {
     $Obj."MemberOf" |ForEach-Object {
-        if ($_ -match 'OU=Security Groups' -and $_ -match "admin") {
+        if ($_ -match 'OU=Security Groups') {
             $Group_Name += @($_.Split(",")[0].Split("=")[1])
         }
     }
